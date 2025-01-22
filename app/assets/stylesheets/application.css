@@ -8,3 +8,430 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+
+
+/* Стили для фона главной страницы */
+body.home-page {
+    background-image: url('https://example.com/your-image.jpg'); /* Путь к изображению */
+    background-size: cover; /* Изображение будет растягиваться и покрывать весь экран */
+    background-position: center center; /* Центрируем изображение */
+    background-attachment: fixed; /* Изображение остается фиксированным при прокрутке */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    min-height: 100vh; /* Минимальная высота на весь экран */
+}
+/* Стили для уведомлений */
+p.notice {
+    color: green; /* Цвет для уведомления */
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Стили для заголовка страницы */
+h1 {
+    font-size: 32px;
+    color: #333; /* Темно-серый цвет для заголовка */
+    text-align: center; /* Выравнивание по центру */
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Стили для контейнера машин */
+#cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Грид-верстка для машин */
+    gap: 20px; /* Отступы между элементами */
+    padding: 0 20px;
+}
+
+/* Стили для каждого блока с машиной */
+#cars .car {
+    background-color: #f9f9f9; /* Светлый фон */
+    border: 1px solid #ddd; /* Граница */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 15px;
+    text-align: center; /* Выравнивание текста по центру */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стили для ссылки "Показать машину" */
+#cars .car p {
+    margin-top: 10px;
+}
+
+#cars .car a {
+    text-decoration: none;
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#cars .car a:hover {
+    background-color: #45a049; /* Темно-зеленый при наведении */
+}
+
+/* Стили для ссылки "Добавить машину" */
+a.btn-add-car {
+    display: inline-block;
+    background-color: #008CBA; /* Синий фон */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-add-car:hover {
+    background-color: #007B9E; /* Темно-синий при наведении */
+}
+
+
+/*Для show*/
+/* Стили для информации о машине */
+p {
+    font-size: 18px;
+    color: #555; /* Средний серый цвет */
+    margin-bottom: 10px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Стили для кнопки "Редактировать" */
+a.btn-edit {
+    display: inline-block;
+    background-color: #008CBA; /* Синий фон */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-edit:hover {
+    background-color: #007B9E; /* Темно-синий при наведении */
+}
+
+
+/* Стили для кнопки "Удалить" */
+button.delete-button, input[type="submit"].delete-button {
+    background-color: #f44336; /* Красный фон */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: background-color 0.3s ease; /* Плавное изменение фона при наведении */
+    display: inline-block; /* Убираем растягивание на всю ширину */
+    margin-right: 10px; /* Отступ справа, если рядом есть другие элементы */
+}
+
+/* Эффект при наведении на кнопку */
+button.delete-button:hover, input[type="submit"].delete-button:hover {
+    background-color: #d32f2f; /* Темно-красный фон при наведении */
+}
+
+
+/* Стили для кнопки "Назад" */
+a.btn-back {
+    display: inline-block;
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a, button {
+    display: inline-block; /* Убираем растягивание на всю ширину */
+    text-align: center;
+}
+
+a.btn-back:hover {
+    background-color: #45a049; /* Темно-зеленый при наведении */
+}
+
+/*NEW*/
+
+/* Стили для заголовка */
+h1 {
+    font-size: 32px;
+    color: #333; /* Темно-серый цвет для заголовка */
+    text-align: center; /* Выравнивание по центру */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Стили для формы */
+form {
+    /*width: 200px;*/
+    /*margin: 0;*/
+    padding: 20px 0px; /* Дополнительные отступы слева и справа */
+    /*background-color: #f9f9f9; !* Светлый фон формы *!*/
+    /*border-radius: 8px; !* Закругленные углы *!*/
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* Легкая тень *!*/
+}
+
+/* Стили для полей формы */
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.field input[type="text"],
+.field input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Стили для кнопки отправки */
+.actions input[type="submit"] {
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Кнопка растягивается на всю ширину */
+    transition: background-color 0.3s ease;
+}
+
+.actions input[type="submit"]:hover {
+    background-color: #45a049; /* Темно-зеленый при наведении */
+}
+
+/* Стили для сообщений об ошибках */
+#error_explanation {
+    background-color: #f8d7da; /* Красный фон для ошибок */
+    color: #721c24; /* Темно-красный цвет текста */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#error_explanation ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#error_explanation li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Стили для кнопки "Назад" */
+a.btn-back {
+    display: inline-block;
+    background-color: #008CBA; /* Синий фон */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-back:hover {
+    background-color: #007B9E; /* Темно-синий при наведении */
+}
+
+/*---------------------------------------*/
+button, a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: white;
+    margin-right: 10px; /* Отступ между кнопками */
+}
+
+/* Кнопка "Показать" */
+a.btn-show {
+    background-color: #008CBA; /* Синий фон */
+}
+
+a.btn-show:hover {
+    background-color: #007B9E; /* Темно-синий фон при наведении */
+}
+
+/* Кнопка "Редактировать" */
+a.btn-edit {
+    background-color: #FFA500; /* Оранжевый фон */
+}
+
+a.btn-edit:hover {
+    background-color: #FF8C00; /* Темно-оранжевый фон при наведении */
+}
+
+
+
+/* Кнопка "Добавить нового сотрудника" */
+a.btn-add {
+    background-color: #4CAF50; /* Зеленый фон */
+}
+
+a.btn-add:hover {
+    background-color: #388E3C; /* Темно-зеленый фон при наведении */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Убирает двойные границы между ячейками */
+    margin: 20px 0; /* Отступы сверху и снизу таблицы */
+    font-family: Arial, sans-serif; /* Шрифт таблицы */
+}
+
+th, td {
+    padding: 12px 20px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border: 1px solid #ddd; /* Легкая граница вокруг ячеек */
+}
+
+th {
+    background-color: #f2f2f2; /* Светлый фон для заголовков */
+    color: #333; /* Темный цвет текста в заголовках */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Цвет фона для четных строк */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Цвет фона при наведении на строку */
+}
+
+
+button, form button, a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;  /* Закругленные углы */
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавный переход при наведении */
+}
+
+/* Стиль для кнопки "Добавить" */
+.btn-add {
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white;              /* Белый текст */
+    font-weight: bold;         /* Жирный текст */
+}
+
+.btn-add:hover {
+    background-color: #45a049; /* Темно-зеленый при наведении */
+    transform: scale(1.05);     /* Немного увеличивается при наведении */
+}
+
+/* Основной стиль для select */
+select {
+    width: 100%;                 /* Ширина на всю доступную ширину контейнера */
+    padding: 10px 15px;          /* Внутренние отступы для улучшения кликабельности */
+    font-size: 16px;             /* Размер шрифта */
+    border: 1px solid #ccc;     /* Тонкая граница серого цвета */
+    border-radius: 5px;         /* Закругленные углы */
+    background-color: #fff;     /* Белый фон */
+    appearance: none;           /* Убираем стандартный браузерный стиль */
+    -webkit-appearance: none;   /* Убираем стиль для WebKit-браузеров */
+    -moz-appearance: none;      /* Убираем стиль для Firefox */
+    color: #333;                /* Цвет текста */
+    cursor: pointer;            /* Курсор указывает, что элемент можно выбрать */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для границы и тени */
+}
+
+/* Стили для фокуса */
+select:focus {
+    border-color: #4CAF50;      /* Зеленая граница при фокусе */
+    box-shadow: 0 0 5px rgba(72, 161, 54, 0.4); /* Легкая тень вокруг поля */
+}
+
+/* Стили для опций в списке */
+select option {
+    padding: 10px;               /* Внутренние отступы для опций */
+    background-color: #fff;      /* Белый фон для опций */
+    color: #333;                 /* Черный цвет текста */
+    font-size: 16px;             /* Размер шрифта */
+}
+
+.btn-back {
+    background-color: #f0f0f0;     /* Светло-серый фон */
+    color: #333;                    /* Черный текст */
+    border: 1px solid #ccc;         /* Тонкая граница серого цвета */
+}
+
+.btn-back:hover {
+    background-color: #ddd;         /* Более темный фон при наведении */
+    transform: scale(1.05);          /* Кнопка немного увеличивается при наведении */
+}
+
+.btn-back:active {
+    background-color: #ccc;         /* Еще более темный фон при нажатии */
+    transform: scale(1);             /* Кнопка возвращается к нормальному размеру */
+}
+
+.btn-back:focus {
+    outline: none;                  /* Убираем стандартную обводку при фокусе */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* Легкая тень при фокусе */
+}
+
+/* Стиль для кнопок на главной странице */
+.btn-link {
+    background-color: #4CAF50;    /* Зеленый фон */
+    color: white;                  /* Белый текст */
+    font-weight: bold;             /* Жирный шрифт */
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;         /* Убираем подчеркивание */
+}
+
+.btn-link:hover {
+    background-color: #45a049;     /* Темно-зеленый фон при наведении */
+    transform: scale(1.05);         /* Увеличиваем кнопку при наведении */
+}
+
+.btn-link:active {
+    background-color: #388e3c;     /* Еще более темный зеленый при нажатии */
+    transform: scale(1);            /* Возвращаем кнопку к нормальному размеру */
+}

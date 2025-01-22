@@ -1,0 +1,15 @@
+<h1><%= @car.brand %> <%= @car.model %></h1>
+
+<p><strong>Цена:</strong> <%= @car.price %> руб.</p>
+<p><strong>Год выпуска:</strong> <%= @car.year %></p>
+
+<!-- Кнопка "Редактировать" с классом для стилизации -->
+<%= link_to 'Редактировать', edit_car_path(@car), class: 'btn-edit' %>
+
+<!-- Форма для удаления машины -->
+<%= form_with(model: @car, method: :delete) do |form| %>
+  <%= form.submit 'Удалить машину', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить эту машину?' } %>
+<% end %>
+
+<!-- Кнопка "Назад" с классом для стилизации -->
+<%= link_to 'Назад', cars_path, class: 'btn-back' %>

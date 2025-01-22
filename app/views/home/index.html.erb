@@ -1,0 +1,28 @@
+<h1>Добро пожаловать в GorillaCars</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Страница</th>
+    <th>Действие</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><strong>Машины</strong></td>
+    <td><%= link_to 'Перейти к машинам', cars_path, class: 'btn btn-link' %></td>
+  </tr>
+  <tr>
+    <td><strong>Клиенты</strong></td>
+    <td><%= link_to 'Перейти к клиентам', customers_path, class: 'btn btn-link' %></td>
+  </tr>
+  <tr>
+    <td><strong>Сотрудники</strong></td>
+    <td><%= link_to 'Перейти к сотрудникам', employees_path, class: 'btn btn-link' %></td>
+  </tr>
+  <tr>
+    <td><strong>Продажи</strong></td>
+    <td><%= link_to 'Перейти к продажам', sales_path, class: 'btn btn-link' %></td>
+  </tr>
+  </tbody>
+</table>

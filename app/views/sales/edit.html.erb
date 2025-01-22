@@ -1,0 +1,11 @@
+<% content_for :title, "Editing sale" %>
+
+<h1>Editing sale</h1>
+
+<%= render "form", sale: @sale %>
+
+<br>
+
+<div>
+  <%= link_to "Обратно к продажам", sales_path,class:'btn-back' %>
+</div>

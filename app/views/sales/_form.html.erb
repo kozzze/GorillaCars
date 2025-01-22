@@ -1,0 +1,36 @@
+<%= form_with(model: @sale, local: true) do |form| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "ошибка") %> запрещают сохранить продажу:</h2>
+      <ul>
+        <% @sale.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :car_id, 'Машина' %>
+    <%= form.collection_select :car_id, @cars, :id, :brand, prompt: 'Выберите машину' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id, 'Клиент' %>
+    <%= form.collection_select :customer_id, @customers, :id, :first_name, prompt: 'Выберите клиента' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id, 'Сотрудник' %>
+    <%= form.collection_select :employee_id, @employees, :id, :first_name, prompt: 'Выберите сотрудника' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sale_price, 'Цена продажи' %>
+    <%= form.number_field :sale_price, step: 100000, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit @sale.new_record? ? 'Добавить продажу' : 'Обновить продажу' %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<h1>Редактировать данные клиента</h1>
+
+<%= form_with(model: @customer, local: true) do |form| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "ошибка") %> запрещают обновить данные клиента:</h2>
+      <ul>
+        <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name, 'Имя' %>
+    <%= form.text_field :first_name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name, 'Фамилия' %>
+    <%= form.text_field :last_name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, 'Телефон' %>
+    <%= form.text_field :phone, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, 'Email' %>
+    <%= form.email_field :email, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Обновить данные клиента' %>
+  </div>
+<% end %>
+
+<%= link_to 'Назад', customers_path,class:'btn-back' %>

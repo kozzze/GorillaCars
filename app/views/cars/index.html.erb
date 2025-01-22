@@ -1,0 +1,17 @@
+<p class="notice"><%= notice %></p>
+
+<% content_for :title, "GorillaCars" %>
+
+<h1>Cars</h1>
+
+<div id="cars">
+  <% @cars.each do |car| %>
+    <div class="car">
+      <h3><%= car.brand %> <%= car.model %></h3> <!-- Показываем бренд и модель -->
+      <p><%= link_to "Показать машину: #{car.brand} #{car.model}", car_path(car), class: 'btn-show-car' %></p> <!-- Кнопка с названием машины -->
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Добавить машину", new_car_path, class: 'btn-add-car' %>
+<%= link_to 'Назад на главную', root_path, class: 'btn btn-back' %>

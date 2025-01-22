@@ -1,0 +1,8 @@
+<h1>Информация о сотруднике</h1>
+
+<p><strong>Имя:</strong> <%= @employee.first_name %></p>
+<p><strong>Фамилия:</strong> <%= @employee.last_name %></p>
+<p><strong>Зарплата:</strong> <%= @employee.salary %> руб.</p>
+
+<%= link_to 'Редактировать', edit_employee_path(@employee),class:'btn-edit' %> |
+<%= link_to 'Назад', employees_path,class:'btn-back' %>

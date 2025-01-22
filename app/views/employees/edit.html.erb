@@ -1,0 +1,35 @@
+<h1>Редактировать сотрудника</h1>
+
+<%= form_with(model: @employee) do |form| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> запрещают обновить данные сотрудника:</h2>
+      <ul>
+        <% @employee.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salary %>
+    <%= form.number_field :salary %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Обновить данные сотрудника' %>
+  </div>
+<% end %>
+
+<%= link_to 'Назад', employee_path(@employee),class:'btn-back'%>

@@ -1,0 +1,31 @@
+<h1>Список сотрудников</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Зарплата</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.first_name %></td>
+      <td><%= employee.last_name %></td>
+      <td><%= employee.salary %> руб.</td>
+      <td>
+        <%= link_to 'Показать', employee_path(employee), class: 'btn btn-show' %>
+        <%= link_to 'Редактировать', edit_employee_path(employee), class: 'btn btn-edit' %>
+        <%= form_with(model: employee, method: :delete, local: true) do |form| %>
+          <%= form.submit 'Удалить', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить этого сотрудника?' } %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Добавить нового сотрудника', new_employee_path, class: 'btn btn-add' %>
+<%= link_to 'Назад на главную', root_path, class: 'btn btn-back' %>

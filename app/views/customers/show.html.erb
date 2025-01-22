@@ -1,0 +1,10 @@
+<h1><%= @customer.first_name %> <%= @customer.last_name %></h1>
+
+<p><strong>Телефон:</strong> <%= @customer.phone %></p>
+<p><strong>Email:</strong> <%= @customer.email %></p>
+
+<%= link_to 'Редактировать', edit_customer_path(@customer),class:'btn-edit' %>
+<%= form_with(model: @customer, method: :delete, local: true) do |form| %>
+  <%= form.submit 'Удалить клиента', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить этого клиента?' } %>
+<% end %>
+<%= link_to 'Назад', customers_path,class:'btn-back' %>
