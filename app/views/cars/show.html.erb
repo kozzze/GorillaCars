@@ -3,6 +3,18 @@
 <p><strong>Цена:</strong> <%= @car.price %> руб.</p>
 <p><strong>Год выпуска:</strong> <%= @car.year %></p>
 
+<% if @car.images.attached? %>
+  <h2>Изображение машины:</h2>
+  <div class="car-images">
+    <% @car.images.each do |image| %>
+      <%= image_tag image, size: "300x300", class: "centered-image" %>  <!-- Применяется стиль для изображения -->
+    <% end %>
+  </div>
+<% else %>
+  <p>Изображений нет.</p>
+<% end %>
+
+
 <!-- Кнопка "Редактировать" с классом для стилизации -->
 <%= link_to 'Редактировать', edit_car_path(@car), class: 'btn-edit' %>
 
@@ -10,6 +22,7 @@
 <%= form_with(model: @car, method: :delete) do |form| %>
   <%= form.submit 'Удалить машину', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить эту машину?' } %>
 <% end %>
+
 
 <!-- Кнопка "Назад" с классом для стилизации -->
 <%= link_to 'Назад', cars_path, class: 'btn-back' %>

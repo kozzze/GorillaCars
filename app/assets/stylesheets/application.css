@@ -10,7 +10,17 @@
  */
 
 
+/* Стили для фона на всех страницах */
+/* В файле application.scss */
+/* В файле application.scss */
 
+
+/* Убираем возможные отступы и рамки для изображений */
+img {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
 
 /* Стили для фона главной страницы */
 body.home-page {
@@ -48,7 +58,7 @@ h1 {
 
 /* Стили для каждого блока с машиной */
 #cars .car {
-    background-color: #f9f9f9; /* Светлый фон */
+    background-color: #373636; /* Светлый фон */
     border: 1px solid #ddd; /* Граница */
     border-radius: 8px; /* Закругленные углы */
     padding: 15px;
@@ -63,7 +73,7 @@ h1 {
 
 #cars .car a {
     text-decoration: none;
-    background-color: #4CAF50; /* Зеленый фон */
+    background-color: #5c5c5b; /* Зеленый фон */
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -71,13 +81,13 @@ h1 {
 }
 
 #cars .car a:hover {
-    background-color: #45a049; /* Темно-зеленый при наведении */
+    background-color: #8c724c; /* Темно-зеленый при наведении */
 }
 
 /* Стили для ссылки "Добавить машину" */
 a.btn-add-car {
     display: inline-block;
-    background-color: #008CBA; /* Синий фон */
+    background-color: #5c5c5b; /* Синий фон */
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -89,7 +99,7 @@ a.btn-add-car {
 }
 
 a.btn-add-car:hover {
-    background-color: #007B9E; /* Темно-синий при наведении */
+    background-color: #8c724c; /* Темно-синий при наведении */
 }
 
 
@@ -108,7 +118,7 @@ strong {
 /* Стили для кнопки "Редактировать" */
 a.btn-edit {
     display: inline-block;
-    background-color: #008CBA; /* Синий фон */
+    background-color: #5c5c5b; /* Синий фон */
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -120,13 +130,13 @@ a.btn-edit {
 }
 
 a.btn-edit:hover {
-    background-color: #007B9E; /* Темно-синий при наведении */
+    background-color: #706432; /* Темно-синий при наведении */
 }
 
 
 /* Стили для кнопки "Удалить" */
 button.delete-button, input[type="submit"].delete-button {
-    background-color: #f44336; /* Красный фон */
+    background-color: #492d2d; /* Красный фон */
     color: white; /* Белый текст */
     padding: 10px 20px; /* Отступы внутри кнопки */
     font-size: 16px; /* Размер шрифта */
@@ -140,14 +150,14 @@ button.delete-button, input[type="submit"].delete-button {
 
 /* Эффект при наведении на кнопку */
 button.delete-button:hover, input[type="submit"].delete-button:hover {
-    background-color: #d32f2f; /* Темно-красный фон при наведении */
+    background-color: #8a2c2c; /* Темно-красный фон при наведении */
 }
 
 
 /* Стили для кнопки "Назад" */
 a.btn-back {
     display: inline-block;
-    background-color: #4CAF50; /* Зеленый фон */
+    background-color: #5c5c5b; /* Зеленый фон */
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -164,7 +174,7 @@ a, button {
 }
 
 a.btn-back:hover {
-    background-color: #45a049; /* Темно-зеленый при наведении */
+    background-color: #706432; /* Темно-зеленый при наведении */
 }
 
 /*NEW*/
@@ -213,7 +223,7 @@ form {
 
 /* Стили для кнопки отправки */
 .actions input[type="submit"] {
-    background-color: #4CAF50; /* Зеленый фон */
+    background-color: #5c5c5b; /* Зеленый фон */
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -225,7 +235,7 @@ form {
 }
 
 .actions input[type="submit"]:hover {
-    background-color: #45a049; /* Темно-зеленый при наведении */
+    background-color: #8c724c; /* Темно-зеленый при наведении */
 }
 
 /* Стили для сообщений об ошибках */
@@ -255,7 +265,7 @@ form {
 /* Стили для кнопки "Назад" */
 a.btn-back {
     display: inline-block;
-    background-color: #008CBA; /* Синий фон */
+    background-color: #373636; /* Синий фон */
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -267,7 +277,7 @@ a.btn-back {
 }
 
 a.btn-back:hover {
-    background-color: #007B9E; /* Темно-синий при наведении */
+    background-color: #706432; /* Темно-синий при наведении */
 }
 
 /*---------------------------------------*/
@@ -287,31 +297,31 @@ button, a.btn {
 
 /* Кнопка "Показать" */
 a.btn-show {
-    background-color: #008CBA; /* Синий фон */
+    background-color: #5c5c5b; /* Синий фон */
 }
 
 a.btn-show:hover {
-    background-color: #007B9E; /* Темно-синий фон при наведении */
+    background-color: #8c724c; /* Темно-синий фон при наведении */
 }
 
 /* Кнопка "Редактировать" */
 a.btn-edit {
-    background-color: #FFA500; /* Оранжевый фон */
+    background-color: #5c5c5b; /* Оранжевый фон */
 }
 
 a.btn-edit:hover {
-    background-color: #FF8C00; /* Темно-оранжевый фон при наведении */
+    background-color: #373636; /* Темно-оранжевый фон при наведении */
 }
 
 
 
 /* Кнопка "Добавить нового сотрудника" */
 a.btn-add {
-    background-color: #4CAF50; /* Зеленый фон */
+    background-color: #5c5c5b; /* Зеленый фон */
 }
 
 a.btn-add:hover {
-    background-color: #388E3C; /* Темно-зеленый фон при наведении */
+    background-color: #706432; /* Темно-зеленый фон при наведении */
 }
 
 table {
@@ -328,16 +338,26 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2; /* Светлый фон для заголовков */
-    color: #333; /* Темный цвет текста в заголовках */
+    /*background-color: #8c724c; !* Светлый фон для заголовков *!*/
+    color: #ffffff; /* Темный цвет текста в заголовках */
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9; /* Цвет фона для четных строк */
+.car-images {
+    display: block; /* Убирает inline display */
+    text-align: left;  /* Убираем центрирование */
+    margin-top: 20px;  /* Отступ сверху между текстом и изображением */
 }
 
+.centered-image {
+    max-width: 100%; /* Устанавливаем максимальную ширину */
+    height: auto; /* Сохраняем пропорции */
+    display: block; /* Убираем inline display */
+    margin: 0; /* Убираем дополнительные отступы */
+}
+
+/* Убираем эффект наведения */
 tr:hover {
-    background-color: #f1f1f1; /* Цвет фона при наведении на строку */
+    background-color: transparent; /* Нет изменений при наведении */
 }
 
 
@@ -355,13 +375,13 @@ button, form button, a.btn {
 
 /* Стиль для кнопки "Добавить" */
 .btn-add {
-    background-color: #4CAF50; /* Зеленый фон */
+    background-color: #706432; /* Зеленый фон */
     color: white;              /* Белый текст */
     font-weight: bold;         /* Жирный текст */
 }
 
 .btn-add:hover {
-    background-color: #45a049; /* Темно-зеленый при наведении */
+    background-color: #8c724c; /* Темно-зеленый при наведении */
     transform: scale(1.05);     /* Немного увеличивается при наведении */
 }
 
@@ -372,19 +392,31 @@ select {
     font-size: 16px;             /* Размер шрифта */
     border: 1px solid #ccc;     /* Тонкая граница серого цвета */
     border-radius: 5px;         /* Закругленные углы */
-    background-color: #fff;     /* Белый фон */
+    background-color: #5c5c5b;     /* Белый фон */
     appearance: none;           /* Убираем стандартный браузерный стиль */
     -webkit-appearance: none;   /* Убираем стиль для WebKit-браузеров */
     -moz-appearance: none;      /* Убираем стиль для Firefox */
-    color: #333;                /* Цвет текста */
+    color: #dcdcdc;                /* Цвет текста */
     cursor: pointer;            /* Курсор указывает, что элемент можно выбрать */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для границы и тени */
 }
-
+/* Стили для <label>, который находится над <select> */
+label {
+    font-size: 16px;
+    color: #f8f8f8 !important; /* Применяем с важностью */
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
 /* Стили для фокуса */
 select:focus {
-    border-color: #4CAF50;      /* Зеленая граница при фокусе */
-    box-shadow: 0 0 5px rgba(72, 161, 54, 0.4); /* Легкая тень вокруг поля */
+    border-color: #706432;      /* Зеленая граница при фокусе */
+    box-shadow: 0 0 5px rgb(140, 114, 76); /* Легкая тень вокруг поля */
+}
+p{
+
+    color: #ffffff;
+
 }
 
 /* Стили для опций в списке */
@@ -397,7 +429,7 @@ select option {
 
 .btn-back {
     background-color: #f0f0f0;     /* Светло-серый фон */
-    color: #333;                    /* Черный текст */
+    color: #5c5c5b;                    /* Черный текст */
     border: 1px solid #ccc;         /* Тонкая граница серого цвета */
 }
 
@@ -418,7 +450,7 @@ select option {
 
 /* Стиль для кнопок на главной странице */
 .btn-link {
-    background-color: #4CAF50;    /* Зеленый фон */
+    background-color: #5c5c5b;    /* Зеленый фон */
     color: white;                  /* Белый текст */
     font-weight: bold;             /* Жирный шрифт */
     padding: 8px 15px;
@@ -427,11 +459,108 @@ select option {
 }
 
 .btn-link:hover {
-    background-color: #45a049;     /* Темно-зеленый фон при наведении */
+    background-color: #8c724c;     /* Темно-зеленый фон при наведении */
     transform: scale(1.05);         /* Увеличиваем кнопку при наведении */
 }
 
 .btn-link:active {
-    background-color: #388e3c;     /* Еще более темный зеленый при нажатии */
+    background-color: #706432;     /* Еще более темный зеленый при нажатии */
     transform: scale(1);            /* Возвращаем кнопку к нормальному размеру */
+}
+
+/* Стили для навигационных кнопок */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px; /* Отступ снизу */
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+nav a {
+    margin: 0 15px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Темнее при наведении */
+}
+body {
+    padding-top: 100px; /* Добавляем отступ сверху для контента, чтобы не перекрывалась навигация */
+}
+
+
+/* Стили для контента */
+.content {
+    text-align: center;
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+}
+h1{
+    color: #959393;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea {
+    background-color: #5c5c5b; /* Светлый фон для полей ввода */
+    color: #dcdcdc; /* Цвет текста */
+    border: 1px solid #ccc; /* Легкая граница */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px; /* Закругленные углы */
+    width: 100%; /* Поле растягивается на всю ширину родительского контейнера */
+    box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
+}
+
+.content table {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Легкая прозрачность */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.content th, .content td {
+    padding: 10px;
+    text-align: center;
+}
+
+.content th {
+    background-color: #aab1aa;
+    color: white;
+}
+
+.content td {
+    background-color: #f9f9f9;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #474747;
+    color: #989898;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-link:hover {
+    background-color: #706432;
+    transform: scale(1.05);
 }

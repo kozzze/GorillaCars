@@ -1,28 +1,132 @@
-<h1>Добро пожаловать в GorillaCars</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GorillaCars</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
-<table>
-  <thead>
-  <tr>
-    <th>Страница</th>
-    <th>Действие</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td><strong>Машины</strong></td>
-    <td><%= link_to 'Перейти к машинам', cars_path, class: 'btn btn-link' %></td>
-  </tr>
-  <tr>
-    <td><strong>Клиенты</strong></td>
-    <td><%= link_to 'Перейти к клиентам', customers_path, class: 'btn btn-link' %></td>
-  </tr>
-  <tr>
-    <td><strong>Сотрудники</strong></td>
-    <td><%= link_to 'Перейти к сотрудникам', employees_path, class: 'btn btn-link' %></td>
-  </tr>
-  <tr>
-    <td><strong>Продажи</strong></td>
-    <td><%= link_to 'Перейти к продажам', sales_path, class: 'btn btn-link' %></td>
-  </tr>
-  </tbody>
-</table>
+  <style>
+      /* Стили для фона главной страницы */
+      body.home-page {
+          background-image: url('<%= asset_path('1.jpg') %>');
+          background-size: cover;
+          background-position: center center;
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          min-height: 100vh;
+          color: white;
+          font-family: Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+          overflow: hidden; /* Если нужно скрыть любые лишние отступы или рамки */
+      }
+      img {
+          border: none; /* Убираем рамку */
+          padding: 0;   /* Убираем внутренние отступы */
+          margin: 0;    /* Убираем внешние отступы */
+      }
+      a img {
+          border: none;
+      }
+
+      /* Стили для навигационных кнопок */
+      nav {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 50px; /* Отступ снизу */
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 10;
+      }
+
+      nav a {
+          margin: 0 15px;
+          padding: 10px 20px;
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+      }
+
+      nav a:hover {
+          background-color: rgba(0, 0, 0, 0.7); /* Темнее при наведении */
+      }
+
+      /* Стили для контента */
+      .content {
+          text-align: center;
+          z-index: 1;
+      }
+
+      .content h1 {
+          font-size: 48px;
+          margin-bottom: 20px;
+          font-weight: bold;
+      }
+
+      .content table {
+          width: 80%;
+          margin: 20px auto;
+          background-color: rgba(255, 255, 255, 0.8); /* Легкая прозрачность */
+          border-radius: 10px;
+          padding: 20px;
+      }
+
+      .content th, .content td {
+          padding: 10px;
+          text-align: center;
+      }
+
+      .content th {
+          background-color: #aab1aa;
+          color: white;
+      }
+
+      .content td {
+          background-color: #f9f9f9;
+      }
+
+      .btn-link {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 16px;
+          text-align: center;
+          border: none;
+          border-radius: 5px;
+          background-color: #474747;
+          color: #989898;
+          text-decoration: none;
+          transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .btn-link:hover {
+          background-color: #706432;
+          transform: scale(1.05);
+      }
+  </style>
+</head>
+<body class="home-page">
+<nav>
+  <%= link_to 'Машины', cars_path, class: 'btn-link' %>
+  <%= link_to 'Клиенты', customers_path, class: 'btn-link' %>
+  <%= link_to 'Сотрудники', employees_path, class: 'btn-link' %>
+  <%= link_to 'Продажи', sales_path, class: 'btn-link' %>
+</nav>
+
+<div class="content">
+
+</div>
+</body>
+</html>
