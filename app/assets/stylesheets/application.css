@@ -525,6 +525,29 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
     box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
 }
 
+.content {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(92, 92, 91); /* Легкая прозрачность */
+    border-radius: 10px;
+    padding: 20px;
+    border-collapse: collapse; /* Убирает двойные границы */
+}
+
+.content th, .content td {
+    padding: 10px;
+    text-align: center;
+}
+
+.content th {
+    background-color: #aab1aa;
+    color: white;
+}
+
+.content td {
+    background-color: #f9f9f9;
+}
+
 .content table {
     width: 80%;
     margin: 20px auto;
@@ -563,4 +586,143 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
 .btn-link:hover {
     background-color: #706432;
     transform: scale(1.05);
+}
+
+.car-details {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(152, 152, 152, 0.8); /* Легкая прозрачность */
+    border-radius: 10px;
+    padding: 20px;
+    border-collapse: collapse; /* Убирает двойные границы */
+}
+
+.car-details th, .car-details td {
+    padding: 12px 20px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border: 1px solid #5c5c5b; /* Светлая граница между ячейками */
+}
+
+.car-details th {
+    background-color: #373737;
+    font-weight: bold;
+}
+
+.car-images img {
+    max-width: 300px; /* Ограничение размера изображения */
+    height: auto;
+    border-radius: 10px;
+}
+
+.customer-details {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(152, 152, 152, 0.8); /* Легкая прозрачность */
+    border-radius: 10px;
+    padding: 20px;
+    border-collapse: collapse; /* Убирает двойные границы */
+}
+
+.customer-details th, .customer-details td {
+    padding: 12px 20px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border: 1px solid #5c5c5b; /* Светлая граница между ячейками */
+}
+
+.customer-details th {
+    background-color: #373737;
+    font-weight: bold;
+}
+
+/* Стили для таблицы сотрудников */
+.employee-table {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(152, 152, 152, 0.8); /* Легкая прозрачность */
+    border-radius: 10px;
+    padding: 20px;
+    border-collapse: collapse; /* Убирает двойные границы */
+}
+
+.employee-table th, .employee-table td {
+    padding: 12px 20px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border: 1px solid #5c5c5b; /* Светлая граница между ячейками */
+}
+
+.employee-table th {
+    background-color: #373737;
+    font-weight: bold;
+}
+
+/* Стили для таблицы продажи машины */
+.sale-details {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(152, 152, 152, 0.8); /* Легкая прозрачность */
+    border-radius: 10px;
+    padding: 20px;
+    border-collapse: collapse; /* Убирает двойные границы */
+}
+
+.sale-details th, .sale-details td {
+    padding: 12px 20px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border: 1px solid #5c5c5b; /* Светлая граница между ячейками */
+}
+
+.sale-details th {
+    background-color: #373737;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red; /* Красный цвет текста */
+    text-align: center; /* Центрируем текст */
+    margin-top: 20px; /* Отступ сверху */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    transition: opacity 1s ease-out; /* Плавное исчезновение */
+}
+
+.error-message.fade-out {
+    opacity: 0; /* Убираем элемент */
+    color: red;
+}
+
+
+/* Стили для приветственного текста */
+.welcome-banner {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #5c5c5b;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.welcome-banner h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #8c724c; /* Золотой цвет для заголовка */
+}
+
+.welcome-banner .highlight {
+    color: #706432; /* Оранжевый цвет для выделения */
+}
+
+.welcome-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+}
+
+.welcome-text span {
+    color: #8c724c;
+    font-weight: bold;
 }

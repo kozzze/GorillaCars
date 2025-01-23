@@ -33,6 +33,16 @@
     <%= form.number_field :year %>
   </div>
 
+  <div class="field">
+    <%= form.label :description, "Описание машины" %>
+    <%= form.text_area :description, rows: 4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :images, "Загрузить изображения" %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Обновить машину' %>
   </div>

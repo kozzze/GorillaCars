@@ -1,9 +1,33 @@
 <h1>Продажа машины</h1>
 
-<p><strong>Машина:</strong> <%= @sale.car.brand %> <%= @sale.car.model %></p>
-<p><strong>Клиент:</strong> <%= @sale.customer.first_name %> <%= @sale.customer.last_name %></p>
-<p><strong>Сотрудник:</strong> <%= @sale.employee.first_name %> <%= @sale.employee.last_name %></p>
-<p><strong>Цена продажи:</strong> <%= @sale.sale_price %> руб.</p>
+<table class="sale-details">
+  <thead>
+  <tr>
+    <th>Параметр</th>
+    <th>Значение</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><strong>Машина:</strong></td>
+    <td><%= @sale.car.brand %> <%= @sale.car.model %></td>
+  </tr>
+  <tr>
+    <td><strong>Клиент:</strong></td>
+    <td><%= @sale.customer.first_name %> <%= @sale.customer.last_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Сотрудник:</strong></td>
+    <td><%= @sale.employee.first_name %> <%= @sale.employee.last_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Цена продажи:</strong></td>
+    <td><%= @sale.sale_price %> руб.</td>
+  </tr>
+  </tbody>
+</table>
 
-<%= link_to 'Редактировать', edit_sale_path(@sale),class:'btn-edit' %> |
-<%= link_to 'Назад', sales_path,class:'btn-back' %>
+<div class="action-buttons">
+  <%= link_to 'Редактировать', edit_sale_path(@sale), class: 'btn-edit' %>
+  <%= link_to 'Назад', sales_path, class: 'btn-back' %>
+</div>

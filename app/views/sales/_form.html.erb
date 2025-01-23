@@ -27,8 +27,9 @@
 
   <div class="field">
     <%= form.label :sale_price, 'Цена продажи' %>
-    <%= form.number_field :sale_price, step: 100000, required: true %>
+    <%= form.number_field :sale_price, step: 1, min: (@sale.car&.price.to_f - 20000 rescue 0), required: true %>
   </div>
+
 
   <div class="actions">
     <%= form.submit @sale.new_record? ? 'Добавить продажу' : 'Обновить продажу' %>

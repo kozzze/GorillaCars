@@ -2,8 +2,13 @@
 
 <% content_for :title, "GorillaCars" %>
 
-<h1>Cars</h1>
+<h1>Машины</h1>
 
+<% if flash[:notice] %>
+  <p class="alert alert-success"><%= flash[:notice] %></p>
+<% elsif flash[:alert] %>
+  <p class="alert alert-danger"><%= flash[:alert] %></p>
+<% end %>
 <div id="cars">
   <% @cars.each do |car| %>
     <div class="car">

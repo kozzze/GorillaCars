@@ -1,6 +1,6 @@
 <h1>Список продаж</h1>
 
-<table>
+<table class="customer-details">
   <thead>
   <tr>
     <th>Машина</th>
@@ -18,8 +18,8 @@
       <td><%= sale.employee.first_name %> <%= sale.employee.last_name %></td>
       <td><%= sale.sale_price %> руб.</td>
       <td>
-        <%= link_to 'Показать', sale_path(sale),class:'btn btn-show' %> |
-        <%= link_to 'Редактировать', edit_sale_path(sale),class:'btn-edit' %> |
+        <%= link_to 'Показать', sale_path(sale),class:'btn btn-show' %>
+        <%= link_to 'Редактировать', edit_sale_path(sale),class:'btn-edit' %>
         <%= form_with(model: sale, method: :delete, local: true) do |form| %>
           <%= form.submit 'Удалить', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить эту продажу?' } %>
         <% end %>

@@ -29,21 +29,28 @@ class CarsController < ApplicationController
         format.html { redirect_to @car, notice: 'Машина была успешно добавлена.' }
         format.json { render :show, status: :created, location: @car }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
+        # Ошибки валидации
+        format.html {
+          render :new, status: :unprocessable_entity
+          flash.now[:alert] = @car.errors.full_messages.to_sentence  # Добавить сообщение об ошибке в flash
+        }
+        format.json { render json: { errors: @car.errors.full_messages }, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /cars/1 or /cars/1.json
   def update
     respond_to do |format|
       if @car.update(car_params)
         format.html { redirect_to @car, notice: 'Машина была успешно обновлена.' }
         format.json { render :show, status: :ok, location: @car }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
+        # Ошибки валидации
+        format.html {
+          render :edit, status: :unprocessable_entity
+          flash.now[:alert] = @car.errors.full_messages.to_sentence  # Добавить сообщение об ошибке в flash
+        }
+        format.json { render json: { errors: @car.errors.full_messages }, status: :unprocessable_entity }
       end
     end
   end
@@ -65,6 +72,6 @@ class CarsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def car_params
-    params.require(:car).permit(:brand, :model, :price, :year, images: [])
+    params.require(:car).permit(:brand, :model, :price, :year, :description,images: [])
   end
 end

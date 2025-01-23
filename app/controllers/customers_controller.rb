@@ -41,8 +41,13 @@ class CustomersController < ApplicationController
 
   # DELETE /customers/1
   def destroy
-    @customer.destroy
-    redirect_to customers_url, notice: 'Клиент был успешно удален.'
+    if @customer.sales.any?
+      flash[:alert] = 'Невозможно удалить клиента, так как он связан с продажами.'
+    else
+      @customer.destroy
+      flash[:notice] = 'Клиент был успешно удален.'
+    end
+    redirect_to customers_url
   end
 
   private

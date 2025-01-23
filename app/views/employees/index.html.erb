@@ -1,6 +1,6 @@
 <h1>Список сотрудников</h1>
 
-<table>
+<table class="employee-table">
   <thead>
   <tr>
     <th>Имя</th>
@@ -27,5 +27,10 @@
   </tbody>
 </table>
 
+<% if flash[:alert] %>
+  <div class="error-message">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
 <%= link_to 'Добавить нового сотрудника', new_employee_path, class: 'btn btn-add' %>
 <%= link_to 'Назад на главную', root_path, class: 'btn btn-back' %>

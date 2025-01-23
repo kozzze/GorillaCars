@@ -1,6 +1,6 @@
 <h1>Список клиентов</h1>
 
-<table>
+<table class="customer-details">
   <thead>
   <tr>
     <th>Имя</th>
@@ -12,22 +12,26 @@
   </thead>
   <tbody>
   <% @customers.each do |customer| %>
-    <tr>
+    <tr id="customer_<%= customer.id %>">
       <td><%= customer.first_name %></td>
       <td><%= customer.last_name %></td>
       <td><%= customer.phone %></td>
       <td><%= customer.email %></td>
       <td>
-        <%= link_to 'Показать', customer_path(customer),class: 'btn btn-show' %> |
-        <%= link_to 'Редактировать', edit_customer_path(customer), class:'btn-edit'%> |
-        <%= form_with(model: customer, method: :delete, local: true) do |form| %>
-          <%= form.submit 'Удалить', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить этого клиента?' } %>
-        <% end %>
+        <%= link_to 'Показать', customer_path(customer), class: 'btn-link' %> |
+        <%= link_to 'Редактировать', edit_customer_path(customer), class: 'btn-link' %> |
+        <%= link_to 'Удалить', customer_path(customer), method: :delete, class: 'btn-link', data: { confirm: 'Вы уверены, что хотите удалить этого клиента?' } %>
+      </td>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
+<% if flash[:alert] %>
+  <div class="error-message">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
 <%= link_to 'Добавить нового клиента', new_customer_path, class: 'btn btn-add' %>
 <%= link_to 'Назад на главную', root_path, class: 'btn btn-back' %>

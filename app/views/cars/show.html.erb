@@ -1,18 +1,46 @@
 <h1><%= @car.brand %> <%= @car.model %></h1>
 
-<p><strong>Цена:</strong> <%= @car.price %> руб.</p>
-<p><strong>Год выпуска:</strong> <%= @car.year %></p>
+<table class="car-details">
+  <!-- Строка с ценой -->
+  <tr>
+    <th>Цена:</th>
+    <td><%= @car.price %> руб.</td>
+  </tr>
 
-<% if @car.images.attached? %>
-  <h2>Изображение машины:</h2>
-  <div class="car-images">
-    <% @car.images.each do |image| %>
-      <%= image_tag image, size: "300x300", class: "centered-image" %>  <!-- Применяется стиль для изображения -->
-    <% end %>
-  </div>
-<% else %>
-  <p>Изображений нет.</p>
-<% end %>
+  <!-- Строка с годом выпуска -->
+  <tr>
+    <th>Год выпуска:</th>
+    <td><%= @car.year %></td>
+  </tr>
+
+  <!-- Строка с изображением -->
+  <tr>
+    <th>Изображение машины:</th>
+    <td>
+      <% if @car.images.attached? %>
+        <div class="car-images">
+          <% @car.images.each do |image| %>
+            <%= image_tag image, size: "300x300", class: "centered-image" %> <!-- Применяется стиль для изображения -->
+          <% end %>
+        </div>
+      <% else %>
+        <p>Изображений нет.</p>
+      <% end %>
+    </td>
+  </tr>
+
+  <!-- Строка с описанием -->
+  <tr>
+    <th>Описание машины:</th>
+    <td>
+      <% if @car.description.present? %>
+        <p><%= @car.description %></p>
+      <% else %>
+        <p>Описание не добавлено.</p>
+      <% end %>
+    </td>
+  </tr>
+</table>
 
 
 <!-- Кнопка "Редактировать" с классом для стилизации -->

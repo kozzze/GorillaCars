@@ -1,6 +1,6 @@
 class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_dependencies, only: [:new, :edit]
   # GET /sales
   def index
     @sales = Sale.all
@@ -16,6 +16,7 @@ class SalesController < ApplicationController
     @cars = Car.all
     @customers = Customer.all
     @employees = Employee.all
+
   end
 
   # GET /sales/1/edit
@@ -28,20 +29,30 @@ class SalesController < ApplicationController
   # POST /sales
   def create
     @sale = Sale.new(sale_params)
+    @cars = Car.all
+    @customers = Customer.all
+    @employees = Employee.all
 
-    if @sale.save
-      redirect_to @sale, notice: 'Продажа была успешно добавлена.'
-    else
-      render :new
+    respond_to do |format|
+      if @sale.save
+        format.html { redirect_to @sale, notice: 'Продажа успешно добавлена.' }
+        format.json { render :show, status: :created, location: @sale }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @sale.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  # PATCH/PUT /sales/1
   def update
-    if @sale.update(sale_params)
-      redirect_to @sale, notice: 'Продажа была успешно обновлена.'
-    else
-      render :edit
+    respond_to do |format|
+      if @sale.update(sale_params)
+        format.html { redirect_to @sale, notice: 'Продажа успешно обновлена.' }
+        format.json { render :show, status: :ok, location: @sale }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @sale.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -55,6 +66,13 @@ class SalesController < ApplicationController
   # Устанавливаем продажу для действия show, edit, update, destroy
   def set_sale
     @sale = Sale.find(params[:id])
+  end
+  private
+
+  def set_dependencies
+    @cars = Car.all
+    @customers = Customer.all
+    @employees = Employee.all
   end
 
   # Разрешаем только доверенные параметры

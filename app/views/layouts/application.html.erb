@@ -7,7 +7,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
+  <%= javascript_include_tag "application" %>
   <%= yield :head %>
 
   <link rel="icon" href="/icon.png" type="image/png">
@@ -21,12 +21,15 @@
 <body style="background-image: url('<%= asset_path('1.jpg') %>'); background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; min-height: 100vh; color: white; font-family: Arial, sans-serif;">
 
 <!-- Навигация, которая будет отображаться на всех страницах -->
-<nav>
+
+  <nav>
   <%= link_to 'Машины', cars_path, class: 'btn-link' %>
   <%= link_to 'Клиенты', customers_path, class: 'btn-link' %>
   <%= link_to 'Сотрудники', employees_path, class: 'btn-link' %>
   <%= link_to 'Продажи', sales_path, class: 'btn-link' %>
 </nav>
+
+
 
 <!-- Основное содержимое страницы -->
 <%= yield %> <!-- Контент каждой страницы будет вставлен сюда -->

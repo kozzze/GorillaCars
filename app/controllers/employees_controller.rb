@@ -41,8 +41,15 @@ class EmployeesController < ApplicationController
 
   # DELETE /employees/:id
   def destroy
-    @employee.destroy
-    redirect_to employees_url, notice: 'Сотрудник был успешно удален.'
+    # Проверяем, есть ли связанные продажи
+    if @employee.sales.any?
+      flash[:alert] = 'Невозможно удалить сотрудника, так как он связан с продажами.'
+      redirect_to employees_url
+    else
+      @employee.destroy
+      flash[:notice] = 'Сотрудник был успешно удален.'
+      redirect_to employees_url
+    end
   end
 
   private
