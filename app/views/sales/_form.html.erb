@@ -12,7 +12,7 @@
 
   <div class="field">
     <%= form.label :car_id, 'Машина' %>
-    <%= form.collection_select :car_id, @cars, :id, :brand, prompt: 'Выберите машину' %>
+    <%= form.collection_select :car_id, @cars, :id, :model, prompt: 'Выберите машину' %>
   </div>
 
   <div class="field">

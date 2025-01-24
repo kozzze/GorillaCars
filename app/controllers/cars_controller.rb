@@ -66,8 +66,13 @@ class CarsController < ApplicationController
   def destroy
     @car.destroy
     respond_to do |format|
-      format.html { redirect_to cars_url, status: :see_other, notice: 'Машина была успешно удалена.' }
+      format.html { redirect_to cars_url, notice: 'Машина была успешно удалена.' }
       format.json { head :no_content }
+    end
+  rescue ActiveRecord::InvalidForeignKey => e
+    respond_to do |format|
+      format.html { redirect_to cars_url, alert: 'Невозможно удалить машину, так как она связана с продажами.' }
+      format.json { render json: { error: 'Невозможно удалить машину, так как она связана с продажами.' }, status: :unprocessable_entity }
     end
   end
 
