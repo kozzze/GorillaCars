@@ -12,8 +12,8 @@
 <div id="cars">
   <% @cars.each do |car| %>
     <div class="car">
-      <h3><%= car.brand %> <%= car.model %></h3> <!-- Показываем бренд и модель -->
-      <p><%= link_to "Показать машину: #{car.brand} #{car.model}", car_path(car), class: 'btn-show-car' %></p> <!-- Кнопка с названием машины -->
+      <h3><%= car.brand %> <%= car.model %></h3>
+      <p><%= link_to "Показать машину: #{car.brand} #{car.model}", car_path(car), class: 'btn-show-car' %></p>
     </div>
   <% end %>
 </div>
