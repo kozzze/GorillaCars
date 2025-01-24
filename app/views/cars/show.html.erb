@@ -1,26 +1,25 @@
 <h1><%= @car.brand %> <%= @car.model %></h1>
 
 <table class="car-details">
-  <!-- Строка с ценой -->
+
   <tr>
     <th>Цена:</th>
     <td><%= @car.price %> руб.</td>
   </tr>
 
-  <!-- Строка с годом выпуска -->
+
   <tr>
     <th>Год выпуска:</th>
     <td><%= @car.year %></td>
   </tr>
 
-  <!-- Строка с изображением -->
   <tr>
     <th>Изображение машины:</th>
     <td>
       <% if @car.images.attached? %>
         <div class="car-images">
           <% @car.images.each do |image| %>
-            <%= image_tag image, size: "300x300", class: "centered-image" %> <!-- Применяется стиль для изображения -->
+            <%= image_tag image, size: "300x300", class: "centered-image" %>
           <% end %>
         </div>
       <% else %>
@@ -29,7 +28,7 @@
     </td>
   </tr>
 
-  <!-- Строка с описанием -->
+
   <tr>
     <th>Описание машины:</th>
     <td>
@@ -43,14 +42,14 @@
 </table>
 
 
-<!-- Кнопка "Редактировать" с классом для стилизации -->
+
 <%= link_to 'Редактировать', edit_car_path(@car), class: 'btn-edit' %>
 
-<!-- Форма для удаления машины -->
+
 <%= form_with(model: @car, method: :delete) do |form| %>
   <%= form.submit 'Удалить машину', class: 'delete-button', data: { confirm: 'Вы уверены, что хотите удалить эту машину?' } %>
 <% end %>
 
 
-<!-- Кнопка "Назад" с классом для стилизации -->
+
 <%= link_to 'Назад', cars_path, class: 'btn-back' %>

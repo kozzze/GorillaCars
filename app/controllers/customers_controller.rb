@@ -52,12 +52,10 @@ class CustomersController < ApplicationController
 
   private
 
-  # Устанавливаем клиента для show, edit, update, destroy
   def set_customer
     @customer = Customer.find(params[:id])
   end
 
-  # Разрешаем только доверенные параметры
   def customer_params
     params.require(:customer).permit(:first_name, :last_name, :phone, :email)
   end

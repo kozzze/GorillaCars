@@ -29,10 +29,10 @@ class CarsController < ApplicationController
         format.html { redirect_to @car, notice: 'Машина была успешно добавлена.' }
         format.json { render :show, status: :created, location: @car }
       else
-        # Ошибки валидации
+
         format.html {
           render :new, status: :unprocessable_entity
-          flash.now[:alert] = @car.errors.full_messages.to_sentence  # Добавить сообщение об ошибке в flash
+          flash.now[:alert] = @car.errors.full_messages.to_sentence
         }
         format.json { render json: { errors: @car.errors.full_messages }, status: :unprocessable_entity }
       end
@@ -41,14 +41,21 @@ class CarsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @car.update(car_params)
+
+      if car_params[:images].present?
+
+        @car.images.attach(car_params[:images])
+      end
+
+
+      if @car.update(car_params.except(:images))
         format.html { redirect_to @car, notice: 'Машина была успешно обновлена.' }
         format.json { render :show, status: :ok, location: @car }
       else
-        # Ошибки валидации
+
         format.html {
+          flash.now[:alert] = @car.errors.full_messages.to_sentence
           render :edit, status: :unprocessable_entity
-          flash.now[:alert] = @car.errors.full_messages.to_sentence  # Добавить сообщение об ошибке в flash
         }
         format.json { render json: { errors: @car.errors.full_messages }, status: :unprocessable_entity }
       end

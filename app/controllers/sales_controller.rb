@@ -63,7 +63,6 @@ class SalesController < ApplicationController
   end
 
   private
-  # Устанавливаем продажу для действия show, edit, update, destroy
   def set_sale
     @sale = Sale.find(params[:id])
   end
@@ -74,8 +73,6 @@ class SalesController < ApplicationController
     @customers = Customer.all
     @employees = Employee.all
   end
-
-  # Разрешаем только доверенные параметры
   def sale_params
     params.require(:sale).permit(:car_id, :customer_id, :employee_id, :sale_price)
   end

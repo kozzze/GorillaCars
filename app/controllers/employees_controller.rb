@@ -41,7 +41,6 @@ class EmployeesController < ApplicationController
 
   # DELETE /employees/:id
   def destroy
-    # Проверяем, есть ли связанные продажи
     if @employee.sales.any?
       flash[:alert] = 'Невозможно удалить сотрудника, так как он связан с продажами.'
       redirect_to employees_url
@@ -53,12 +52,9 @@ class EmployeesController < ApplicationController
   end
 
   private
-  # Установить сотрудника для show, edit, update, destroy
   def set_employee
     @employee = Employee.find(params[:id])
   end
-
-  # Разрешить параметры для сотрудника
   def employee_params
     params.require(:employee).permit(:first_name, :last_name, :salary)
   end
